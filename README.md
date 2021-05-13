@@ -21,7 +21,7 @@ Classification:
 
 Questions: 
 - What is the requirement for a publication to be put in archive? (year, #of publication on the publication page?...)
-
+- Would you prefer a 'block editor editing experience'?
 
 
 
