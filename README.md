@@ -1,3 +1,8 @@
+Needed:
+- Custom post type for publications  ✓
+- Taxonomy for year  ✓
+- Custom fields for primary components 
+
 Primary Components:
 - author (link to author profile?)
 - title
@@ -11,10 +16,10 @@ Primary Components:
 
 
 Potential component:
-- images/graph/illustrations
+- images/graph/illustrations  
 
 Classification:
-- per year
+- per year ✓
 - per author
 - per field
 - archive?
