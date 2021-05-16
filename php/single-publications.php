@@ -33,45 +33,44 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
       </div>
 
     <?php endwhile; endif; ?>
-
 <div class="col span_3_of_12">
 <ul>
-<?php if(get_post_meta($post->ID, 'Author', true)):?>
+<?php if(get_post_meta($post->ID, 'publication_author', true)):?>
 <li>
- Author: <?php echo get_post_meta($post->ID, 'Author', true);?>
+ Author: <?php echo get_post_meta($post->ID, 'publication_author', true);?>
 </li>
 <?php endif;?>
-<?php if(get_post_meta($post->ID, 'Journal', true)):?>
+<?php if(get_post_meta($post->ID, 'publication_journal', true)):?>
 <li>
- Journal: <?php echo get_post_meta($post->ID, 'Journal', true);?>
+ Journal: <?php echo get_post_meta($post->ID, 'publication_journal', true);?>
 </li>
 <?php endif;?>
-<?php if(get_post_meta($post->ID, 'Volume', true)):?>
+<?php if(get_post_meta($post->ID, 'publication_volume', true)):?>
 <li>
- Volume: <?php echo get_post_meta($post->ID, 'Volume', true);?>
+ Volume: <?php echo get_post_meta($post->ID, 'publication_volume', true);?>
 </li>
 <?php endif;?>
-<?php if(get_post_meta($post->ID, 'Pages', true)):?>
-<li> 
- Pages: <?php echo get_post_meta($post->ID, 'Pages', true);?>
-</li>
-<?php endif;?>
-<?php if(get_post_meta($post->ID, 'ISSN', true)):?>
+<?php if(get_post_meta($post->ID, 'publication_pages', true)):?>
 <li>
- ISSN: <?php echo get_post_meta($post->ID, 'ISSN', true);?>
+ Pages: <?php echo get_post_meta($post->ID, 'publication_pages', true);?>
 </li>
 <?php endif;?>
-<?php if( get_post_meta($post->ID, 'DOI', true)):?>
+<?php if(get_post_meta($post->ID, 'publication_ISSN', true)):?>
+<li>
+ ISSN: <?php echo get_post_meta($post->ID, 'publication_ISSN', true);?>
+</li>
+<?php endif;?>
+<?php if( get_post_meta($post->ID, 'publication_DOI', true)):?>
 
 <li>
- DOI: <?php echo get_post_meta($post->ID, 'DOI', true);?>
+ DOI: <?php echo get_post_meta($post->ID, 'publication_DOI', true);?>
 </li>
 <?php endif;?>
-<?php if(get_post_meta($post->ID, 'URL', true)):?>
+<?php if(get_post_meta($post->ID, 'publication_URL', true)):?>
 <?php
-            echo '<li> URL: <a href="' . get_post_meta($post->ID, 'URL', true). '"> link to publication</a></li>';?>
+            echo '<li> URL: <a href="' . get_post_meta($post->ID, 'publication_URL', true). '"> link to publication</a></li>';?>
 <?php endif;?>
-</ul> 
+</ul>
     </div>
 
   </div>
