@@ -25,11 +25,17 @@ Potential supplemental component:
 - images/graph/illustrations  (in progress, added but formatting to modify)
 
 Citation formatting to cover:
-- AMA
-- APA
-- Chicago
+- AGLC3
+- AGPS Press - Style Manual 6th edition
+- AMA (American Medical Association)
+- APA (American Psychological Association - 7th edition)
+- Chicago 17th : Notes & Bibliography
+- Chicago/Turabian : Author-Date
+- Harvard
+- IEEE
 - MLA
-- NLM
+- Oxford Style
+- Uniform
 
 
 Classification:
