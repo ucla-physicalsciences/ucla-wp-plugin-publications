@@ -20,3 +20,9 @@ add_action ('init', 'register_publication_type');
 
 require_once (PUB_PATH . '/php/ucla-custom-post-publications-taxonomies.php');
 add_action('init', 'register_date_taxonomy');
+
+require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
+add_action('admin_init', 'admin_init_article');
+
+require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
+add_action('save_post', 'save_publication_details_article');
