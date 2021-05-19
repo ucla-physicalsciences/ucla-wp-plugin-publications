@@ -119,3 +119,47 @@ function save_publication_details_book(){
 }
 ?>
 
+<?php
+    function admin_init_booklet(){
+        add_meta_box("publicationInfo-meta-booklet", " Booklet Details", "meta_options_booklet", "publication", "side", "low");
+    }
+
+
+    function meta_options_booklet(){
+        global $post;
+        $custom = get_post_custom($post->ID);
+        $booklet_title = $custom["booklet_title"][0];
+        $booklet_author = $custom["booklet_author" ][0];
+        $booklet_address = $custom["booklet_address"][0];
+        $booklet_howpublished = $custom["booklet_howpublished"][0];
+        $booklet_note = $custom["booklet_note"][0];
+        $booklet_key = $custom["booklet_key"][0];
+        $booklet_month = $custom["booklet_month"][0];
+        $booklet_year = $custom["booklet_year"][0];
+?>
+    <label>Title: </label><input name="booklet_title" value="<?php echo $booklet_title; ?>" />
+  <br><br>  <label>Author: </label><input name="booklet_author" value="<?php echo $booklet_author; ?>" />
+<br><br>  <label>Year: </label><input name="booklet_year" value="<?php echo $booklet_year; ?>" />
+<br><br>  <label>Month: </label><input name="booklet_month" value="<?php echo $booklet_month; ?>" />
+  <br><br>  <label>How Published: </label><input name="booklet_howpublished" value="<?php echo $booklet_howpublished; ?>" />
+<br><br>  <label>Note: </label><input name="booklet_note" value="<?php echo $booklet_note; ?>" />
+<br><br>  <label>Key: </label><input name="booklet_key" value="<?php echo $booklet_key; ?>" />
+ <br><br>  <label>Address: </label><input name="booklet_address" value="<?php echo $booklet_address; ?>" />
+<?php
+    }
+
+
+function save_publication_details_booklet(){
+    global $post;
+    update_post_meta($post->ID, "booklet_title", $_POST["booklet_title"]);
+    update_post_meta($post->ID, "booklet_author", $_POST["booklet_author"]);
+       update_post_meta($post->ID, "booklet_month", $_POST["booklet_month"]);
+    update_post_meta($post->ID, "booklet_note", $_POST["booklet_note"]);
+    update_post_meta($post->ID, "booklet_howpublished", $_POST["booklet_howpublished"]);
+    update_post_meta($post->ID, "booklet_key", $_POST["booklet_key"]);
+    update_post_meta($post->ID, "booklet_year", $_POST["booklet_year"]);
+    update_post_meta($post->ID, "booklet_address", $_POST["booklet_address"]);
+
+}
+?>
+
