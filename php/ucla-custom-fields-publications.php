@@ -57,3 +57,65 @@ function save_publication_details_article(){
 
 }
 ?>
+<?php
+    function admin_init_book(){
+        add_meta_box("publicationInfo-meta-book", "Book Details", "meta_options_book", "publication", "side", "low");
+    }
+
+
+    function meta_options_book(){
+        global $post;
+        $custom = get_post_custom($post->ID);
+        $book_title = $custom["book_title"][0];
+        $book_author = $custom["book_author"][0];
+        $book_editor = $custom["book_editor"][0];
+        $book_publisher = $custom["book_publisher"][0];
+        $book_address = $custom["book_address"][0];
+        $book_pages = $custom["book_pages"][0];
+        $book_edition = $custom["book_edition"][0];
+        $book_volume = $custom["book_volume"][0];
+        $book_number = $custom["book_number"][0];
+        $book_note = $custom["book_note"][0];
+        $book_key = $custom["book_key"][0];
+        $book_month = $custom["book_month"][0];
+        $book_year = $custom["book_year"][0];
+        $book_series = $custom["book_series"][0];
+?>
+    <label>Title: </label><input name="book_title" value="<?php echo $book_title; ?>" />
+  <br><br>  <label>Author: </label><input name="book_author" value="<?php echo $book_author; ?>" />
+  <br><br>  <label>Editor: </label><input name="book_editor" value="<?php echo $book_editor; ?>" />
+<br><br>  <label>Year: </label><input name="book_year" value="<?php echo $book_year; ?>" />
+<br><br>  <label>Month: </label><input name="book_month" value="<?php echo $book_month; ?>" />
+  <br><br>  <label>Number: </label><input name="book_number" value="<?php echo $book_number; ?>" />
+<br><br>  <label>Volume: </label><input name="book_volume" value="<?php echo $book_volume; ?>" />
+  <br><br>  <label>Pages: </label><input name="book_pages" value="<?php echo $book_pages; ?>" />
+<br><br>  <label>Note: </label><input name="book_note" value="<?php echo $book_note; ?>" />
+<br><br>  <label>Key: </label><input name="book_key" value="<?php echo $book_key; ?>" />
+  <br><br>  <label>Series: </label><input name="book_series" value="<?php echo $book_series; ?>" />
+  <br><br>  <label>Publisher: </label><input name="book_publisher" value="<?php echo $book_publisher; ?>" />
+  <br><br>  <label>Edition: </label><input name="book_edition" value="<?php echo $book_edition; ?>" />
+ <br><br>  <label>Address: </label><input name="book_address" value="<?php echo $book_address; ?>" />
+<?php
+    }
+
+
+function save_publication_details_book(){
+    global $post;
+    update_post_meta($post->ID, "book_title", $_POST["book_title"]);
+    update_post_meta($post->ID, "book_author", $_POST["book_author"]);
+    update_post_meta($post->ID, "book_volume", $_POST["book_volume"]);
+    update_post_meta($post->ID, "book_pages", $_POST["book_pages"]);
+    update_post_meta($post->ID, "book_series", $_POST["book_series"]);
+    update_post_meta($post->ID, "book_publisher", $_POST["book_publisher"]);
+    update_post_meta($post->ID, "book_edition", $_POST["book_edition"]);
+    update_post_meta($post->ID, "book_volume", $_POST["book_volume"]);
+    update_post_meta($post->ID, "book_month", $_POST["book_month"]);
+    update_post_meta($post->ID, "book_note", $_POST["book_note"]);
+    update_post_meta($post->ID, "book_number", $_POST["book_number"]);
+    update_post_meta($post->ID, "book_key", $_POST["book_key"]);
+    update_post_meta($post->ID, "book_year", $_POST["book_year"]);
+    update_post_meta($post->ID, "book_address", $_POST["book_address"]);
+
+}
+?>
+
