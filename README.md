@@ -7,12 +7,12 @@ Needed:
 - Way to select the citation formatting
 
 BibTex entry to cover:
-- Article
-- Book
+- Article✓
+- Book✓
 - Booklet
 - Conference
-- inbook
-- incollection
+- inbook✓
+- incollection✓
 - inproceedings
 - Manual
 - Master Thesis
