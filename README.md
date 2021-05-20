@@ -9,18 +9,18 @@ Needed:
 BibTex entry to cover:
 - Article✓
 - Book✓
-- Booklet
+- Booklet✓
 - Conference
 - inbook✓
 - incollection✓
-- inproceedings
-- Manual
-- Master Thesis
-- Misc
-- PHD Thesis
-- Proceeding
-- Tech Report
-- Unpublished
+- inproceedings✓
+- Manual✓
+- Master Thesis✓
+- Misc✓
+- PHD Thesis✓
+- Proceeding✓
+- Tech Report✓
+- Unpublished✓
 Potential supplemental component:
 - images/graph/illustrations  (in progress, added but formatting to modify)
 
