@@ -702,7 +702,7 @@ update_post_meta($post->ID, "manual_edition", $_POST["manual_edition"]);
         if (isset($custom["mastersthesis_address"][0])){
                 $mastersthesis_address = $custom["mastersthesis_address"][0];}
         else{
-        c       $mastersthesis_address="";}
+              $mastersthesis_address="";}
         if (isset($custom["mastersthesis_school"][0])){
                 $mastersthesis_school = $custom["mastersthesis_school"][0];}
         else{
