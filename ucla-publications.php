@@ -15,22 +15,16 @@ define( 'PUB_VERSION', '0.1.0');
 define( 'PUB_DOMAIN', 'ucla-wp-plugin-publications');
 define ('PUB_PATH', plugin_dir_path(__FILE__));
 
-require_once( PUB_PATH . '/php/ucla-custom-post-publications.php');
+require_once( PUB_PATH . '/php/ucla-custom-post-publications.php'); //include custom post file
 add_action ('init', 'register_publication_type');
 
-require_once (PUB_PATH . '/php/ucla-custom-post-publications-taxonomies.php');
+require_once (PUB_PATH . '/php/ucla-custom-post-publications-taxonomies.php'); //include taxonomies file
 add_action('init', 'register_date_taxonomy');
 
-require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
+require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php'); //include custom fields file
 add_action('admin_init', 'admin_init_article');
-
-require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
 add_action('save_post', 'save_publication_details_article');
-
-require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
 add_action('admin_init', 'admin_init_book');
-
-require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
 add_action('save_post', 'save_publication_details_book');
 /*
 
