@@ -198,7 +198,7 @@ function save_publication_details_book(){
 
 }
 ?>
-<?php
+<?php /*
     function admin_init_booklet(){
         add_meta_box("publicationInfo-meta-booklet", "Booklet Details", "meta_options_booklet", "publication", "side", "low");
     }
@@ -1120,6 +1120,6 @@ function save_publication_details_techreport(){
 update_post_meta($post->ID, "techreport_type", $_POST["techreport_type"]);
 update_post_meta($post->ID, "techreport_number", $_POST["techreport_number"]);
 }
-?>
+?>*/
 
 
