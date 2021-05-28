@@ -27,4 +27,4 @@ add_action('admin_init', 'admin_init_article'); //add the meta box for articles 
 add_action('save_post', 'save_publication_details_article');//allow to save any updates done to articles details
 add_action('admin_init', 'admin_init_book');//add the meta box for book details
 add_action('save_post', 'save_publication_details_book');//allow to save any updates done to book details
-/*
+
