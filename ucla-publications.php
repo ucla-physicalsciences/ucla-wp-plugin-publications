@@ -32,9 +32,11 @@ add_action('admin_init', 'admin_init_book');
 
 require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
 add_action('save_post', 'save_publication_details_book');
+/*
 
 require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
 add_action('admin_init', 'admin_init_booklet');
 
 require_once (PUB_PATH . '/php/ucla-custom-fields-publications.php');
 add_action('save_post', 'save_publication_details_booklet');
+*/
