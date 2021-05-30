@@ -1,8 +1,8 @@
 <?php
-
+//register the CPT "publications"
 function register_publication_type()
 {
-        $labels = array(
+        $labels = array( //set all the labels of our CPT
                 'name' => __('Publications', PUB_DOMAIN),
                 'singular_name' => __('Publication', PUB_DOMAIN),
                 'featured_image' => __('Publication Image', PUB_DOMAIN),
@@ -16,11 +16,11 @@ function register_publication_type()
         );
 
         $args = array(
-                'labels' => $labels,
+                'labels' => $labels, //set labels as $labels
                 'public' => true, /*allow our custom post type on the admin/front end*/
                 'rewrite' => array ('has_front' => true),
-                'menu_icon' => 'dashicons-analytics',
-                'supports' => array('title','editor','thumbnail'),
+                'menu_icon' => 'dashicons-analytics', //set the menu icon
+                'supports' => array('title','editor','thumbnail'), //set the support available within our CPT
                 'show_in_rest' =>false,/*block editor?*/
         );
         register_post_type ('publication', $args);
