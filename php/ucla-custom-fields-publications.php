@@ -1,17 +1,17 @@
 <?php
-
+//function to add the meta-box "article details" in the publication CP with all the items specified in the meta_option_article + positioning
     function admin_init_article(){
         add_meta_box("publicationInfo-meta-article", "Article Details", "meta_options_article", "publication", "side", "low");
-    }
+    }. 
 
 
     function meta_options_article(){
         global $post;
-        $custom = get_post_custom($post->ID);
-        if (isset($custom["publication_title"][0])){
-                $publication_title = $custom["publication_title"][0];}
+        $custom = get_post_custom($post->ID); //Retrieve post meta fields, based on post ID
+        if (isset($custom["publication_title"][0])){ //check if there exist content within "publication_title"
+                $publication_title = $custom["publication_title"][0];} //if yes keeps it
         else{
-                $publication_title  ="";}
+                $publication_title  ="";} //otherwise set it as empty
         if (isset($custom["publication_author"][0])){
                 $publication_author = $custom["publication_author"][0];}
         else{
@@ -60,7 +60,12 @@
                  $publication_year = $custom["publication_year"][0];}
          else{
                  $publication_year="";}
+        
+        //create the boxes for the userto enter values for each article detail item
 ?>
+
+
+    
  <label>Title: </label><input name="publication_title" value="<?php echo $publication_title; ?>" />
   <br><br>  <label>Author: </label><input name="publication_author" value="<?php echo $publication_author; ?>" />
   <br><br>  <label>Journal: </label><input name="publication_journal" value="<?php echo $publication_journal; ?>" />
@@ -77,7 +82,7 @@
 <?php
     }
 
-
+//update the value of each item of article details according to the user entry
 function save_publication_details_article(){
     global $post;
     update_post_meta($post->ID, "publication_title", $_POST["publication_title"]);
