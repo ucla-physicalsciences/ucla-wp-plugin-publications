@@ -108,6 +108,16 @@ else:
 endif;
 $content .= '</ul>';
 return $content;
+   
+function load_template($template){
+        global $post;
+        if('publication' === $post->post_type && locate_template(array('single-publication.php'))!== $template) {
+                return plugin_dir_path(__FILE__).'single-publication.php';
+        }
+        return $template;
+}
+add_filter('single_template', 'load_template');
+}
 
 }
 
