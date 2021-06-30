@@ -67,7 +67,15 @@ add_action('admin_init','add_post_meta_boxes_article');
 function save_publication_details_article(){
         global $post;
 if (defined('DOING_AUTOSAVE')&& DOING_AUTOSAVE){return;}
-update_post_meta($post->ID, "_article_date",sanitize_text_field($_POST["_article_date"]));
+update_post_meta($post->ID, "_article_year",sanitize_text_field($_POST["_article_year"]));
+update_post_meta($post->ID, "_article_journal",sanitize_text_field($_POST["_article_journal"]));
+update_post_meta($post->ID, "_article_volume",sanitize_text_field($_POST["_article_volume"]));
+update_post_meta($post->ID, "_article_number",sanitize_text_field($_POST["_article_number"]));
+update_post_meta($post->ID, "_article_pages",sanitize_text_field($_POST["_article_pages"]));
+update_post_meta($post->ID, "_article_month",sanitize_text_field($_POST["_article_month"]));
+update_post_meta($post->ID, "_article_DOI",sanitize_text_field($_POST["_article_DOI"]));
+update_post_meta($post->ID, "_article_note",sanitize_text_field($_POST["_article_note"]));
+update_post_meta($post->ID, "_article_key",sanitize_text_field($_POST["_article_key"]));
 }
 add_action('save_post','save_publication_details_article');
 
@@ -76,9 +84,24 @@ add_action('save_post','save_publication_details_article');
 function publication_metabox_article() {
         global $post;
         $custom = get_post_custom($post->ID);//retrieve post meta fields based on post ID
-        $field_data = $custom["_article_date"][0]; //grab data from "_article_date"
-        echo "<input type=\"date\" name=\"_article_date\" value=\"".$field_data."\" placeholder=\"Publication Date\">";
-}
+        $field_data_article_year = $custom["_article_year"][0]; //grab data from "_article_year"
+        echo "<input type=\"text\" name=\"_article_year\" value=\"".$field_data_article_year."\" placeholder=\"Publication Year\">";
+        $field_data_article_month = $custom["_article_month"][0]; //grab data from "_article_month"
+        echo "<input type=\"text\" name=\"_article_month\" value=\"".$field_data_article_month."\" placeholder=\"Publication Month\">";
+        $field_data_article_journal = $custom["_article_journal"][0]; //grab data from "_article_journal"
+        echo "<input type=\"text\" name=\"_article_journal\" value=\"".$field_data_article_journal."\" placeholder=\" Journal\">";
+        $field_data_article_volume = $custom["_article_volume"][0]; //grab data from "_article_volume"
+        echo "<input type=\"text\" name=\"_article_volume\" value=\"".$field_data_article_volume."\" placeholder=\"Volume\">";
+        $field_data_article_number = $custom["_article_number"][0]; //grab data from "_article_number"
+        echo "<input type=\"text\" name=\"_article_numberr\" value=\"".$field_data_article_number."\" placeholder=\"Number\">";
+        $field_data_article_pages = $custom["_article_pages"][0]; //grab data from "_article_pages"
+        echo "<input type=\"text\" name=\"_article_pages\" value=\"".$field_data_article_pages."\" placeholder=\"Pages\">";
+        $field_data_article_DOI = $custom["_article_DOI"][0]; //grab data from "_article_DOI"
+        echo "<input type=\"text\" name=\"_article_DOI\" value=\"".$field_data_article_DOI."\" placeholder=\"DOI\">";
+        $field_data_article_note = $custom["_article_note"][0]; //grab data from "_article_note"
+        echo "<input type=\"text\" name=\"_article_note\" value=\"".$field_data_article_note."\" placeholder=\"Note\">";
+$field_data_article_year = $custom["_article_key"][0]; //grab data from "_article_key"
+        echo "<input type=\"text\" name=\"_article_key\" value=\"".$field_data_article_key."\" placeholder=\"Key\">";}
 //generate shortcode
 add_shortcode('articles-list', 'myarticles');
 function myarticles(){
@@ -107,7 +130,6 @@ else:
         _e('No publications', 'PUB_DOMAIN');
 endif;
 $content .= '</ul>';
-return $content;
    
 function load_template($template){
         global $post;
