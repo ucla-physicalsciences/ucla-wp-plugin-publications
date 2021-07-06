@@ -133,6 +133,7 @@ $content .= '</ul>';
    
 
 }
+//link article template
 function article_template($template){
         global $post;
         if ('publication' === $post->post_type && locate_template(array('single-article.php'))!==$template){
