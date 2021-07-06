@@ -93,7 +93,7 @@ function publication_metabox_article() {
         $field_data_article_volume = $custom["_article_volume"][0]; //grab data from "_article_volume"
         echo "<input type=\"text\" name=\"_article_volume\" value=\"".$field_data_article_volume."\" placeholder=\"Volume\">";
         $field_data_article_number = $custom["_article_number"][0]; //grab data from "_article_number"
-        echo "<input type=\"text\" name=\"_article_numberr\" value=\"".$field_data_article_number."\" placeholder=\"Number\">";
+        echo "<input type=\"text\" name=\"_article_number\" value=\"".$field_data_article_number."\" placeholder=\"Number\">";
         $field_data_article_pages = $custom["_article_pages"][0]; //grab data from "_article_pages"
         echo "<input type=\"text\" name=\"_article_pages\" value=\"".$field_data_article_pages."\" placeholder=\"Pages\">";
         $field_data_article_DOI = $custom["_article_DOI"][0]; //grab data from "_article_DOI"
