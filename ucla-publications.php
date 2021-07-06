@@ -136,7 +136,7 @@ $content .= '</ul>';
 function article_template($template){
         global $post;
         if ('publication' === $post->post_type && locate_template(array('single-article.php'))!==$template){
-                return PUB_DOMAIN . 'single-article.php';
+                return plugin_dir_path( __FILE__ ) . 'single-article.php';
         }
         return $template;
 }
