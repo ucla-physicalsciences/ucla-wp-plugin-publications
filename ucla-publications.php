@@ -131,15 +131,14 @@ else:
 endif;
 $content .= '</ul>';
    
-function load_template($template){
+
+}
+function article_template($template){
         global $post;
-        if('publication' === $post->post_type && locate_template(array('single-publication.php'))!== $template) {
-                return plugin_dir_path(__FILE__).'single-publication.php';
+        if ('publication' === $post->post_type && locate_template(array('single-article.php'))!==$template){
+                return PUB_DOMAIN . 'single-article.php';
         }
         return $template;
 }
-add_filter('single_template', 'load_template');
-}
-
-}
+add_filter('single_template','article_template');
 
