@@ -143,3 +143,15 @@ function article_template($template){
 }
 add_filter('single_template','article_template');
 
+//Gutemberg block to render publications
+
+function publication_gutenberg_block()
+{
+        if (!function_exists('register_block_type')){
+                return;
+        }
+wp_register_script('gutenberg-publication-block', plugin_dir_url(__FILE__). '/gutenberg-publication-block.js', array('wp-blocks'));
+register_block_type('ucla-publications/my-publication', array(
+        'editor_script' => 'gutenberg-publication-block'
+));}
+add_action('init' , 'publication_gutenberg_block');
