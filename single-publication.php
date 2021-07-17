@@ -15,30 +15,28 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 	  <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 <?php if(get_post_meta($post->ID,'entrytype',true)&& get_post_meta($post->ID,'entrytype',true)=='article'):?>
 	  <p><?php if(get_post_meta($post->ID,'author',true)):
-	  echo get_post_meta($post->ID, 'author',true);
-	  endif;?>.
-	  (<?php if(get_post_meta($post->ID, 'month', true)):
-	  echo get_post_meta($post->ID, 'month', true);?> /<?php
-	  endif;?>
-	  <?php if(get_post_meta($post->ID, 'year', true)):
-          echo get_post_meta($post->ID, 'year', true);
-	  endif;?>).
-	  <?php if(get_post_meta($post->ID, 'title', true)):
+          echo get_post_meta($post->ID, 'author',true);
+          endif;?>.
+          <?php if(get_post_meta($post->ID, 'title', true)):
           echo get_post_meta($post->ID, 'title', true);
           endif;?>.
-	  <em><?php if(get_post_meta($post->ID, 'journal', true)):
+          <em><?php if(get_post_meta($post->ID, 'journal', true)):
           echo get_post_meta($post->ID, 'journal', true);
           endif;?></em> <?php if(get_post_meta($post->ID, 'volume', true)):?>, <?php
           echo get_post_meta($post->ID, 'volume', true);
-	  endif;?><?php if(get_post_meta($post->ID, 'number', true)):?>(<?php
-		  echo get_post_meta($post->ID, 'number', true);?>)<?php
-	  endif;?> <?php if(get_post_meta($post->ID, 'pages', true)):?>:<?php
-		  echo get_post_meta($post->ID, 'pages', true);?>.<?php
-	  endif;?>
- 	  <?php if(get_post_meta($post->ID, 'note', true)):
-		  echo get_post_meta($post->ID, 'note', true);?>.<?php
+          endif;?><?php if(get_post_meta($post->ID, 'number', true)):?>(<?php
+                  echo get_post_meta($post->ID, 'number', true);?>)<?php
+          endif;?> <?php if(get_post_meta($post->ID, 'pages', true)):?>:<?php
+                  echo get_post_meta($post->ID, 'pages', true);?>.<?php
+                  endif;?>
+<?php if(get_post_meta($post->ID, 'month', true)):
+          echo get_post_meta($post->ID, 'month', true);
           endif;?>
-
+          <?php if(get_post_meta($post->ID, 'year', true)):
+                  echo get_post_meta($post->ID, 'year', true);?>.<?php endif;?>
+          <?php if(get_post_meta($post->ID, 'note', true)):
+                  echo get_post_meta($post->ID, 'note', true);?>.<?php
+          endif;?>
 	  </p><?php endif;?>
 	  <?php if(get_post_meta($post->ID,'entrytype',true)&&get_post_meta($post->ID,'entrytype',true)=='book'):?>
 		  <p><?php if (get_post_meta($post->ID,'author',true)):
