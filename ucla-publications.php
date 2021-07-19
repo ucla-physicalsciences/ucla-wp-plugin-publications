@@ -1,4 +1,3 @@
-   
 <?php
 /**
  * Plugin Name: UCLA Academic Publications
@@ -93,6 +92,7 @@ update_post_meta($post->ID, "month",sanitize_text_field($_POST["month"]));
 update_post_meta($post->ID, "note",sanitize_text_field($_POST["note"]));
 update_post_meta($post->ID, "author",sanitize_text_field($_POST["author"]));
 update_post_meta($post->ID, "title",sanitize_text_field($_POST["title"]));
+update_post_meta($post->ID, "DOI",sanitize_text_field($_POST["DOI"]));
 }
 add_action('save_post','save_publication_details_article');
 
@@ -150,7 +150,9 @@ function publication_metabox_article() {
 	$field_data_pages = $custom["pages"][0]; //grab data from "pages"
         echo "<input type=\"text\" name=\"pages\" value=\"".$field_data_pages."\" placeholder=\"Pages\">";
 	$field_data_note = $custom["note"][0]; //grab data from "note"
-	echo "<input type=\"text\" name=\"note\" value=\"".$field_data_note."\" placeholder=\"Note\">";}
+	echo "<input type=\"text\" name=\"note\" value=\"".$field_data_note."\" placeholder=\"Note\">";
+	$field_data_DOI = $custom["DOI"][0]; //grab data from "DOI"
+        echo "<input type=\"text\" name=\"DOI\" value=\"".$field_data_DOI."\" placeholder=\"DOI\">";}
 //generate shortcode
 add_shortcode('articles-list', 'myarticles');
 function myarticles(){
@@ -200,3 +202,4 @@ register_block_type('ucla-publications/my-publication', array(
 	'editor_script' => 'gutenberg-publication-block'
 ));}
 add_action('init' , 'publication_gutenberg_block');
+
